@@ -42,6 +42,7 @@
 
 ## 프로그래밍 요구사항2 - 제약사항
 - [ ] [자바 코드 컨벤션][자바 코드 컨벤션 URL]을 지키면서 프로그래밍
+  -[x] intellij-java-wooteco-style.xml 로 formatter 적용.
 - [ ] indent 1까지만 허용
   - ex) while문 안에 if문이 있으면 들여쓰기는 2
   - 힌트: ndent depth를 줄이는 좋은 방법은 함수(또는 메소드)를 분리하면 된다.
