@@ -31,4 +31,14 @@ public class Inning {
         }
         return inningStatus;
     }
+
+    public InningStatus compareBalls(List<Integer> oppositeNumbers) {
+        Inning inning = new Inning(oppositeNumbers);
+        InningStatus inningStatus = new InningStatus();
+        for (Ball oppositeBall : inning.getBalls()) {
+            InningStatus innerStatus = compareOneBall(oppositeBall);
+            inningStatus.applyStatus(innerStatus);
+        }
+        return inningStatus;
+    }
 }

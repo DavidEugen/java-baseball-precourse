@@ -59,4 +59,14 @@ public class InningTest {
         assertThat(resultStatus.getBall()).isEqualTo(0);
     }
 
+    @Test
+    @DisplayName("사용자 숫자 3개에 대한 스트라이크 판별")
+    void 사용자_3개_비교_스트라이크_판별(){
+        //when
+        InningStatus resultStatus = computer.compareBalls(Arrays.asList(7, 2, 5));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(3);
+        assertThat(resultStatus.getBall()).isEqualTo(0);
+    }
+
 }

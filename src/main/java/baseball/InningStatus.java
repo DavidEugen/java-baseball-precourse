@@ -21,4 +21,9 @@ public class InningStatus {
             ball += 1;
         }
     }
+
+    public void applyStatus(InningStatus innerStatus) {
+        strike += innerStatus.getStrike();
+        ball += innerStatus.getBall();
+    }
 }
