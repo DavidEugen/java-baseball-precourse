@@ -50,7 +50,7 @@ public class StringTest {
     void charAtTest() {
         //given
         String givenValue = "abc";
-트
+
         //when //then
         assertThat(givenValue.charAt(0)).isEqualTo('a');
         assertThat(givenValue.charAt(2)).isEqualTo('c');
