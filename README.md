@@ -59,7 +59,7 @@
   - 단, UI(System.out, System.in, Scanner) 로직은 제외
   - 핵심 로직을 구현하는 코드와 UI를 담당하는 로직을 분리해 구현
   - 힌트: **MVC 패턴 기반으로 구현한** 후 **View, Controller 를 제외한 Model 에 대한 단위 테스트를 추가**하는 것에 집중
-- [ ] JUnit5와 AssertJ 사용법에 익숙하지 않은 개발자는 첨부한 "학습테스트를 통해 JUnit 학습하기.pdf" 문서를 참고해
+- [x] JUnit5와 AssertJ 사용법에 익숙하지 않은 개발자는 첨부한 "학습테스트를 통해 JUnit 학습하기.pdf" 문서를 참고해
   사용법을 학습한 후 JUnit5 기반 단위 테스트를 구현
 
 ## 기능 요구 사항
