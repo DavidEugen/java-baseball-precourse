@@ -14,11 +14,11 @@ public class Ball {
         return number > 0 && number < 10;
     }
 
-    public String compareBall(Ball oppositeBall) {
+    public BallStatus compareBall(Ball oppositeBall) {
         if(oppositeBall.getPosition() == position && oppositeBall.getNumber() == number){
-            return "Strike";
+            return BallStatus.STRIKE;
         }
-        return "ball or nothing";
+        return BallStatus.NOTHING;
     }
 
     public int getPosition() {

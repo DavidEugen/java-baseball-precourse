@@ -1,6 +1,5 @@
 package baseball;
 
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.DisplayName;
@@ -26,9 +25,10 @@ public class BallTest {
         //given
         Ball computer = new Ball(1, 3);
         //when
-        String result = computer.compareBall(new Ball(1, 3));
+        BallStatus result = computer.compareBall(new Ball(1, 3));
         //then
-        assertThat(result).isEqualTo("Strike");
+        assertThat(result).isEqualTo(BallStatus.STRIKE);
     }
+
 
 }
