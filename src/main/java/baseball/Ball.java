@@ -2,8 +2,8 @@ package baseball;
 
 public class Ball {
 
-    int position;
-    int number;
+    private final int position;
+    private final int number;
 
     public Ball(int position, int number) {
         this.position = position;
@@ -17,6 +17,9 @@ public class Ball {
     public BallStatus compareBall(Ball oppositeBall) {
         if(oppositeBall.getPosition() == position && oppositeBall.getNumber() == number){
             return BallStatus.STRIKE;
+        }
+        if(oppositeBall.getPosition() != position && oppositeBall.getNumber() == number){
+            return BallStatus.BALL;
         }
         return BallStatus.NOTHING;
     }
