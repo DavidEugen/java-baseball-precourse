@@ -1,5 +1,7 @@
 package baseball;
 
+import java.util.Objects;
+
 public class Ball {
 
     private final int position;
@@ -31,4 +33,17 @@ public class Ball {
     public int getNumber() {
         return number;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Ball ball = (Ball) o;
+        return position == ball.position && number == ball.number;
+    }
+
 }
