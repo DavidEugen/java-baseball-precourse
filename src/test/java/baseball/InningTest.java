@@ -30,13 +30,25 @@ public class InningTest {
     }
 
     @Test
-    @DisplayName("3개의 숫자를 받아서 공 한개와 비교")
-    void 공_3개와_비교(){
+    @DisplayName("사용자 숫자 1개에 대한 스트라이크 판별")
+    void 사용자_1개_비교_스트라이크_판별(){
         //when
         InningStatus resultStatus = computer.compareOneBall(new Ball(1, 7));
         //then
         assertThat(resultStatus.getStrike()).isEqualTo(1);
+        assertThat(resultStatus.getBall()).isEqualTo(0);
     }
+
+    @Test
+    @DisplayName("사용자 숫자 1개에 대한 볼 판별")
+    void 사용자_1개_비교_볼_판별(){
+        //when
+        InningStatus resultStatus = computer.compareOneBall(new Ball(2, 7));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(0);
+        assertThat(resultStatus.getBall()).isEqualTo(1);
+    }
+
 
 
 }
