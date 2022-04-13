@@ -20,7 +20,7 @@ public class InningTest {
 
     @Test
     @DisplayName("Integer List 로 들어온 값들이 제대로 만들어 졌는지 테스트")
-    void 리스트로_볼_리스트_만들기(){
+    void 리스트로_볼_리스트_만들기() {
         //when
         List<Ball> balls = computer.getBalls();
         //then
@@ -31,7 +31,7 @@ public class InningTest {
 
     @Test
     @DisplayName("사용자 숫자 1개에 대한 스트라이크 판별")
-    void 사용자_1개_비교_스트라이크_판별(){
+    void 사용자_1개_비교_스트라이크_판별() {
         //when
         InningStatus resultStatus = computer.compareOneBall(new Ball(1, 7));
         //then
@@ -41,7 +41,7 @@ public class InningTest {
 
     @Test
     @DisplayName("사용자 숫자 1개에 대한 볼 판별")
-    void 사용자_1개_비교_볼_판별(){
+    void 사용자_1개_비교_볼_판별() {
         //when
         InningStatus resultStatus = computer.compareOneBall(new Ball(2, 7));
         //then
@@ -51,7 +51,7 @@ public class InningTest {
 
     @Test
     @DisplayName("사용자 숫자 1개에 대한 낫싱 판별")
-    void 사용자_1개_비교_낫싱_판별(){
+    void 사용자_1개_비교_낫싱_판별() {
         //when
         InningStatus resultStatus = computer.compareOneBall(new Ball(1, 4));
         //then
@@ -60,12 +60,42 @@ public class InningTest {
     }
 
     @Test
-    @DisplayName("사용자 숫자 3개에 대한 스트라이크 판별")
-    void 사용자_3개_비교_스트라이크_판별(){
+    @DisplayName("사용자 숫자 3개에 대한 3 스트라이크 판별")
+    void 사용자_3개_비교_3스트라이크_판별() {
         //when
         InningStatus resultStatus = computer.compareBalls(Arrays.asList(7, 2, 5));
         //then
         assertThat(resultStatus.getStrike()).isEqualTo(3);
+        assertThat(resultStatus.getBall()).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("사용자 숫자 3개에 대한 3볼 판별")
+    void 사용자_3개_비교_3볼_판별() {
+        //when
+        InningStatus resultStatus = computer.compareBalls(Arrays.asList(2, 5, 7));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(0);
+        assertThat(resultStatus.getBall()).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("사용자 숫자 3개에 대한 1스트라이크 1볼 판별")
+    void 사용자_3개_비교_1스트라이크_1볼_판별() {
+        //when
+        InningStatus resultStatus = computer.compareBalls(Arrays.asList(7, 5, 3));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(1);
+        assertThat(resultStatus.getBall()).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("사용자 숫자 3개에 대한 낫싱 판별")
+    void 사용자_3개_비교_낫싱_판별() {
+        //when
+        InningStatus resultStatus = computer.compareBalls(Arrays.asList(1, 4, 3));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(0);
         assertThat(resultStatus.getBall()).isEqualTo(0);
     }
 
