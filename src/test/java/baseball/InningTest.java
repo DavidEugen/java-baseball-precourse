@@ -49,6 +49,14 @@ public class InningTest {
         assertThat(resultStatus.getBall()).isEqualTo(1);
     }
 
-
+    @Test
+    @DisplayName("사용자 숫자 1개에 대한 낫싱 판별")
+    void 사용자_1개_비교_낫싱_판별(){
+        //when
+        InningStatus resultStatus = computer.compareOneBall(new Ball(1, 4));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(0);
+        assertThat(resultStatus.getBall()).isEqualTo(0);
+    }
 
 }
