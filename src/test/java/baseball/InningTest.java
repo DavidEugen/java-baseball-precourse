@@ -29,5 +29,14 @@ public class InningTest {
         assertThat(balls.get(2).equals(new Ball(3, 5))).isTrue();
     }
 
+    @Test
+    @DisplayName("3개의 숫자를 받아서 공 한개와 비교")
+    void 공_3개와_비교(){
+        //when
+        InningStatus resultStatus = computer.compareOneBall(new Ball(1, 7));
+        //then
+        assertThat(resultStatus.getStrike()).isEqualTo(1);
+    }
+
 
 }
