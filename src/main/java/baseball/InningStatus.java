@@ -26,4 +26,9 @@ public class InningStatus {
         strike += innerStatus.getStrike();
         ball += innerStatus.getBall();
     }
+
+    public boolean continueInning() {
+        return strike != 3;
+    }
+
 }

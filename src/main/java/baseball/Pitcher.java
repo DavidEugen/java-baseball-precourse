@@ -13,7 +13,7 @@ public class Pitcher {
     public static final int MAX_NUMBER = 9;
     public static final int NUMBER_SIZE = 3;
 
-    public List<Integer> generateNumbers() {
+    public static List<Integer> generateNumbers() {
         Set<Integer> numbers = new HashSet<>();
 
         while (numbers.size() < NUMBER_SIZE) {
