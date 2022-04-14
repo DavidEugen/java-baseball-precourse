@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.config.BaseballConfig;
+
 public class Ball {
 
     private final int position;
@@ -11,14 +13,14 @@ public class Ball {
     }
 
     public static boolean isInRangeNumber(int number) {
-        return number > 0 && number < 10;
+        return number >= BaseballConfig.MIN_NUMBER && number <= BaseballConfig.MAX_NUMBER;
     }
 
     public BallStatus compareBall(Ball oppositeBall) {
-        if(oppositeBall.getPosition() == position && oppositeBall.getNumber() == number){
+        if (oppositeBall.getPosition() == position && oppositeBall.getNumber() == number) {
             return BallStatus.STRIKE;
         }
-        if(oppositeBall.getPosition() != position && oppositeBall.getNumber() == number){
+        if (oppositeBall.getPosition() != position && oppositeBall.getNumber() == number) {
             return BallStatus.BALL;
         }
         return BallStatus.NOTHING;

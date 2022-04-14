@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.config.BaseballConfig;
+
 public class InningStatus {
 
     private int strike = 0;
@@ -28,7 +30,7 @@ public class InningStatus {
     }
 
     public boolean continueInning() {
-        return strike != 3;
+        return strike != BaseballConfig.NUMBER_SIZE;
     }
 
 }
