@@ -2,10 +2,12 @@ package baseball.ui;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
+import baseball.config.BaseballConfig;
 import baseball.domain.BallStatus;
 import baseball.domain.Inning;
 import baseball.domain.InningStatus;
 import baseball.domain.Pitcher;
+import baseball.message.ErrorMessage;
 import baseball.message.UIMessages;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
@@ -13,13 +15,21 @@ import java.util.List;
 
 public class PlayGrounds {
 
-    public static List<Integer> convertStringToNumbers(String givenValue) {
+    public static List<Integer> convertStringToNumbers(String inputValue) {
         List<Integer> numbers = new ArrayList<>();
-        int givenValueLength = givenValue.length();
+        int givenValueLength = inputValue.length();
         for (int i = 0; i < givenValueLength; i++) {
-            numbers.add(Integer.parseInt(String.valueOf(givenValue.charAt(i))));
+            numbers.add(Integer.parseInt(String.valueOf(inputValue.charAt(i))));
         }
         return numbers;
+    }
+
+    public static String validateInputValue(String inputValue) {
+        int inputLength = inputValue.length();
+        if (inputLength < BaseballConfig.NUMBER_SIZE || inputLength > BaseballConfig.NUMBER_SIZE) {
+            throw new IllegalArgumentException(ErrorMessage.VALIDATE_LENGTH);
+        }
+        return inputValue;
     }
 
     public void playGame() {
@@ -38,19 +48,26 @@ public class PlayGrounds {
         Inning inning = new Inning(Pitcher.generateNumbers());
         InningStatus inningStatus;
         do {
-            System.out.print(UIMessages.REQUIRE_NUMBERS);
-            inningStatus = inningProcess(inning);
+            String inputString = getTypingNumber(inning);
+            inningStatus = inning.compareBalls(convertStringToNumbers(inputString));
+            System.out.println(getStatusMessage(inningStatus));
         } while (inningStatus.continueInning());
 
         System.out.println(UIMessages.END_INNING);
 
     }
 
-    private InningStatus inningProcess(Inning inning) {
-        InningStatus inningStatus;
-        inningStatus = inning.compareBalls(convertStringToNumbers(readLine()));
-        System.out.println(getStatusMessage(inningStatus));
-        return inningStatus;
+    private String getTypingNumber(Inning inning) {
+        String inputString;
+        try {
+            System.out.print(UIMessages.REQUIRE_NUMBERS);
+            inputString = validateInputValue(readLine());
+        } catch (IllegalArgumentException ex){
+            System.out.println(ex.getMessage());
+            inputString = getTypingNumber(inning);
+        }
+
+        return inputString;
     }
 
     private String getStatusMessage(InningStatus inningStatus) {
