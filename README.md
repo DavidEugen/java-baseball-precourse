@@ -28,34 +28,34 @@
 ## 과제 제출 전 체크리스트 - 0점 방지
 - [x] 터미널에서 “java -version”을 실행해 자바 8인지 확인
 - [x] 또는 Eclipse, Intellij와 같 은 IDE의 자바 8로 실행하는지 확인
-- [ ] ```./gradlew clean test``` 명령어를 실행하고, 모든 테스트가 통과하는지 확인
+- [x] ```./gradlew clean test``` 명령어를 실행하고, 모든 테스트가 통과하는지 확인
 
 ## 프로그래밍 요구사항1 - 제약사항
-- [ ] 숫자 야구게임을 실행하는 시작점은 **src/main/java** 폴더의 **baseball.Application**의 **main()** 이다
-- [ ] 숫자 야구게임은 JDK 8 버전에서 실행가능해야 한다. JDK 8에서 정상 동작하지 않을 경우 0점 처리한다.
-- [ ] Random 및 Scanner 사용시 => camp.nextstep.edu.missionutils에서 제공하는 Randoms 및 Console API를 사용하여 구현
+- [x] 숫자 야구게임을 실행하는 시작점은 **src/main/java** 폴더의 **baseball.Application**의 **main()** 이다
+- [x] 숫자 야구게임은 JDK 8 버전에서 실행가능해야 한다. JDK 8에서 정상 동작하지 않을 경우 0점 처리한다.
+- [x] Random 및 Scanner 사용시 => camp.nextstep.edu.missionutils에서 제공하는 Randoms 및 Console API를 사용하여 구현
   - Random 값 추출은 **camp.nextstep.edu.missionutils.Randoms**의 **pickNumberInRange()**
   - 사용자가 입력하는 값은 **camp.nextstep.edu.missionutils.Console**의 **readLine()** 을
-- [ ] 완료시 src/test/java 폴더의 baseball.ApplicationTest의 2개의 Test Case가 성공. 실패할 경우 0점
+- [x] 완료시 src/test/java 폴더의 baseball.ApplicationTest의 2개의 Test Case가 성공. 실패할 경우 0점
   - ApplicationTest에서 제공하는 2개의 Test Case는 숫자 야구게임 구현을 위한 최소한의 Test Case이다.
   - [옵션] 소스 코드를 참고해 숫자 야구게임을 위한 모든 Test Case를 추가해 보는 것도 테스트에 대한 좋은 연습.
 
 ## 프로그래밍 요구사항2 - 제약사항
-- [ ] [자바 코드 컨벤션][자바 코드 컨벤션 URL]을 지키면서 프로그래밍
+- [x] [자바 코드 컨벤션][자바 코드 컨벤션 URL]을 지키면서 프로그래밍
   - [x] intellij-java-wooteco-style.xml 로 formatter 적용.
-- [ ] indent 1까지만 허용
+- [x] indent 1까지만 허용
   - ex) while문 안에 if문이 있으면 들여쓰기는 2
   - 힌트: ndent depth를 줄이는 좋은 방법은 함수(또는 메소드)를 분리하면 된다.
-- [ ] 자바 8에 추가된 **stream api를 사용하지 않고** 구현해야 한다. 단, **람다는 사용 가능**하다.
-- [ ] **else 예약어를 쓰지 않는다**.
+- [x] 자바 8에 추가된 **stream api를 사용하지 않고** 구현해야 한다. 단, **람다는 사용 가능**하다.
+- [x] **else 예약어를 쓰지 않는다**.
   - 힌트: if 조건절에서 값을 return하는 방식으로 구현하면 else를 사용하지 않아도 된다
   - switch/case도 허용하지 않는다
-- [ ] 함수(또는 메소드)의 길이가 10라인을 넘어가지 않도록 구현한다.
+- [x] 함수(또는 메소드)의 길이가 10라인을 넘어가지 않도록 구현한다.
   - 함수(또는 메소드)가 한 가지 일만 잘 하도록 구현
 
 
 ## 프로그래밍 요구사항3 - 단위 테스트
-- [ ] 도메인 로직에 단위 테스트를 구현해야 한다
+- [x] 도메인 로직에 단위 테스트를 구현해야 한다
   - 단, UI(System.out, System.in, Scanner) 로직은 제외
   - 핵심 로직을 구현하는 코드와 UI를 담당하는 로직을 분리해 구현
   - 힌트: **MVC 패턴 기반으로 구현한** 후 **View, Controller 를 제외한 Model 에 대한 단위 테스트를 추가**하는 것에 집중
@@ -64,13 +64,13 @@
 
 ## 기능 요구 사항
 
-- [ ] 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임 => 룰(모델)
-- [ ] 같은 수가 같은 자리에 있으면 스트라이크, 다른 자리에 있으면 볼, 같은 수가 전혀 없으면 낫싱이란 힌트를 얻고, 그 힌트를
+- [x] 1부터 9까지 서로 다른 수로 이루어진 3자리의 수를 맞추는 게임 => 룰(모델)
+- [x] 같은 수가 같은 자리에 있으면 스트라이크, 다른 자리에 있으면 볼, 같은 수가 전혀 없으면 낫싱이란 힌트를 얻고, 그 힌트를
   이용해서 먼저 상대방(컴퓨터)의 수를 맞추면 승리한다. => 룰(모델), UI
-- [ ] 상대방의 역할을 컴퓨터가 한다.  컴퓨터는 1에서 9까지 서로 다른 임의의 수 3개를 선택. 플레이어는 컴퓨터가 생각하고 있는 3개의 숫자를 입력. 
+- [x] 상대방의 역할을 컴퓨터가 한다.  컴퓨터는 1에서 9까지 서로 다른 임의의 수 3개를 선택. 플레이어는 컴퓨터가 생각하고 있는 3개의 숫자를 입력. 
   컴퓨터는 게임 플레이어가 입력한 숫자에 대한 결과를 출력 => UI 
-- [ ] 과정을 반복해 컴퓨터가 선택한 3개의 숫자를 모두 맞히면 게임이 종료 => UI
-- [ ] 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료 => UI
+- [x] 과정을 반복해 컴퓨터가 선택한 3개의 숫자를 모두 맞히면 게임이 종료 => UI
+- [x] 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료 => UI
 
 ### [기능 요구사항 목록 정리](./docs/README.md)
 

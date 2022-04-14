@@ -64,7 +64,7 @@ public class PlayGrounds {
             inputString = validateInputValue(readLine());
         } catch (IllegalArgumentException ex){
             System.out.println(ex.getMessage());
-            inputString = getTypingNumber(inning);
+            throw new IllegalArgumentException(ErrorMessage.END_GAME);
         }
 
         return inputString;
