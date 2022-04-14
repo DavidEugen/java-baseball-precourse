@@ -1,7 +1,10 @@
-package baseball;
+package baseball.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import baseball.domain.Ball;
+import baseball.domain.Inning;
+import baseball.domain.InningStatus;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;

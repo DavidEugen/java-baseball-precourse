@@ -1,7 +1,10 @@
-package baseball;
+package baseball.ui;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
+import baseball.domain.Inning;
+import baseball.domain.InningStatus;
+import baseball.domain.Pitcher;
 import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;

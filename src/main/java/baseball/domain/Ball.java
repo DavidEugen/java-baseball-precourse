@@ -1,6 +1,4 @@
-package baseball;
-
-import java.util.Objects;
+package baseball.domain;
 
 public class Ball {
 

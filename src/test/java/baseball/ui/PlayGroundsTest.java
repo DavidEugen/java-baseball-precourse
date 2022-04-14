@@ -1,10 +1,10 @@
-package baseball;
+package baseball.ui;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import baseball.ui.PlayGrounds;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
