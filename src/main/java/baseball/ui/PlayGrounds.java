@@ -54,7 +54,6 @@ public class PlayGrounds {
         } while (inningStatus.continueInning());
 
         System.out.println(UIMessages.END_INNING);
-
     }
 
     private String getTypingNumber(Inning inning) {
@@ -62,11 +61,10 @@ public class PlayGrounds {
         try {
             System.out.print(UIMessages.REQUIRE_NUMBERS);
             inputString = validateInputValue(readLine());
-        } catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
             throw new IllegalArgumentException(ErrorMessage.END_GAME);
         }
-
         return inputString;
     }
 
@@ -74,7 +72,10 @@ public class PlayGrounds {
         if (inningStatus.getBall() == 0 && inningStatus.getStrike() == 0) {
             return BallStatus.NOTHING.getName();
         }
+        return getNotNothingMessage(inningStatus);
+    }
 
+    private String getNotNothingMessage(InningStatus inningStatus) {
         StringBuilder statusMessage = new StringBuilder();
         if (inningStatus.getBall() != 0) {
             statusMessage.append(inningStatus.getBall()).append(BallStatus.BALL.getName()).append(" ");
@@ -82,7 +83,6 @@ public class PlayGrounds {
         if (inningStatus.getStrike() != 0) {
             statusMessage.append(inningStatus.getStrike()).append(BallStatus.STRIKE.getName());
         }
-
         return statusMessage.toString();
     }
 }
